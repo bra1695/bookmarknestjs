@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------
+   Utilities
+------------------------------------ */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ------------------------------------
+   Design Tokens – Light Mode
+------------------------------------ */
+@layer base {
+  :root {
+    /* Background & text */
+    --background: 165 21% 93%;        /* neutral-100 #EBF0EF */
+    --foreground: 170 82% 5%;         /* neutral-900 #051513 */
+
+    /* Surfaces */
+    --card: 0 0% 100%;                /* neutral-0 */
+    --card-foreground: 170 82% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 170 82% 5%;
+
+    /* Brand (Teal) */
+    --primary: 178 97% 14%;           /* teal-700 #014745 */
+    --primary-foreground: 0 0% 100%;
+
+    /* Neutral UI */
+    --secondary: 165 13% 76%;         /* neutral-400 #C0CFCC */
+    --secondary-foreground: 170 82% 5%;
+
+    --muted: 165 21% 93%;             /* neutral-100 */
+    --muted-foreground: 165 6% 56%;   /* neutral-500 */
+
+    --accent: 165 13% 76%;
+    --accent-foreground: 170 82% 5%;
+
+    /* Destructive */
+    --destructive: 2 98% 62%;         /* red-600 #FD4740 */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs */
+    --border: 165 13% 76%;
+    --input: 165 13% 76%;
+    --ring: 178 97% 14%;
+
+    /* Charts */
+    --chart-1: 178 97% 14%;
+    --chart-2: 170 82% 5%;
+    --chart-3: 165 6% 56%;
+    --chart-4: 2 98% 62%;
+    --chart-5: 178 100% 22%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* ------------------------------------
+   Design Tokens – Dark Mode
+------------------------------------ */
+@layer base {
+  .dark {
+    /* Background & text */
+    --background: 180 100% 4%;        /* neutral-dark-900 #001414 */
+    --foreground: 180 5% 71%;         /* neutral-dark-100 #B8BEBB */
+
+    /* Surfaces */
+    --card: 180 100% 6%;              /* neutral-dark-800 */
+    --card-foreground: 180 5% 71%;
+
+    --popover: 180 100% 6%;
+    --popover-foreground: 180 5% 71%;
+
+    /* Brand (Teal) */
+    --primary: 178 100% 22%;          /* teal-800 #013C3B */
+    --primary-foreground: 0 0% 100%;
+
+    /* Neutral UI */
+    --secondary: 179 100% 13%;        /* neutral-dark-500 */
+    --secondary-foreground: 180 5% 71%;
+
+    --muted: 179 100% 13%;
+    --muted-foreground: 180 5% 55%;
+
+    --accent: 179 100% 13%;
+    --accent-foreground: 180 5% 71%;
+
+    /* Destructive */
+    --destructive: 2 94% 41%;         /* red-800 #C80A04 */
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & inputs */
+    --border: 180 100% 10%;
+    --input: 180 100% 10%;
+    --ring: 178 100% 22%;
+
+    /* Charts */
+    --chart-1: 178 100% 22%;
+    --chart-2: 180 5% 71%;
+    --chart-3: 179 100% 13%;
+    --chart-4: 2 94% 41%;
+    --chart-5: 178 97% 14%;
+  }
+}
+
+/* ------------------------------------
+   Base styles
+------------------------------------ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
