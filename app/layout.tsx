@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "BookMark",
-  description: "BookMark Dashboard",
+  description: "BookMark Application",
 };
 
 export default function RootLayout({
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`font-geist`}>
+    <html lang="en">
       <body className="min-h-screen">
         <Providers>
           {children}

@@ -18,12 +18,12 @@ const config: Config = {
   				'300': '#DDE9E7',
   				'400': '#C0CFCC',
   				'500': '#899492',
-  				'800': '#4C5C59',
+  				'800': '#4C5C58',
   				'900': '#051513'
   			},
   			'neutral-dark': {
   				'0': '#FFFFFF',
-  				'100': '#B9C9C9',
+  				'100': '#B8BEBB',
   				'300': '#00706E',
   				'400': '#004746',
   				'500': '#004241',
@@ -116,11 +116,6 @@ const config: Config = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		},
-  		fontFamily: {
-  			geist: ['var(--font-geist-sans)', 'sans-serif'],
-  			inter: ['Inter', 'sans-serif'],
-  			roboto: ['Roboto', 'sans-serif']
   		}
   	}
   },

@@ -116,7 +116,7 @@ export default function HomePage() {
           onAddBookmark={handleAddBookmark}
         />
         
-        <div className="p-6 flex-1">
+        <div className="p-4 md:p-6 flex-1">
           <div className="mb-6">
             <h1 className="text-3xl font-bold tracking-tight">
               {currentView === 'home' ? 'Bookmarks' : 'Archived Bookmarks'}
@@ -128,9 +128,9 @@ export default function HomePage() {
 
           {/* Bookmarks display */}
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-card rounded-lg border p-4 animate-pulse">
+                <div key={i} className="bg-card rounded-lg border w-96 p-4 animate-pulse">
                   <div className="flex items-start gap-3 mb-3">
                     <div className="w-6 h-6 bg-muted rounded"></div>
                     <div className="flex-1">
@@ -148,7 +148,7 @@ export default function HomePage() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {bookmarks.map((bookmark) => (
                 <BookmarkCard 
                   key={bookmark.id} 

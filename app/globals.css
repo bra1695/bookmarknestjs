@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
-
 /* ------------------------------------
    Utilities
 ------------------------------------ */
@@ -96,14 +94,14 @@
   .dark {
     /* Background & text */
     --background: 180 100% 4%;        /* neutral-dark-900 #001414 */
-    --foreground: 180 5% 79%;         /* neutral-dark-100 #B9C9C9 */
+    --foreground: 180 5% 71%;         /* neutral-dark-100 #B8BEBB */
 
     /* Surfaces */
     --card: 180 100% 6%;              /* neutral-dark-800 */
-    --card-foreground: 180 5% 79%;
+    --card-foreground: 180 5% 71%;
 
     --popover: 180 100% 6%;
-    --popover-foreground: 180 5% 79%;
+    --popover-foreground: 180 5% 71%;
 
     /* Brand (Teal) */
     --primary: 178 100% 22%;          /* teal-800 #013C3B */
@@ -111,13 +109,13 @@
 
     /* Neutral UI */
     --secondary: 179 100% 13%;        /* neutral-dark-500 */
-    --secondary-foreground: 180 5% 79%;
+    --secondary-foreground: 180 5% 71%;
 
     --muted: 179 100% 13%;
     --muted-foreground: 180 5% 55%;
 
     --accent: 179 100% 13%;
-    --accent-foreground: 180 5% 79%;
+    --accent-foreground: 180 5% 71%;
 
     /* Destructive */
     --destructive: 2 94% 41%;         /* red-800 #C80A04 */
@@ -130,7 +128,7 @@
 
     /* Charts */
     --chart-1: 178 100% 22%;
-    --chart-2: 180 5% 79%;
+    --chart-2: 180 5% 71%;
     --chart-3: 179 100% 13%;
     --chart-4: 2 94% 41%;
     --chart-5: 178 97% 14%;
