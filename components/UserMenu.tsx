@@ -1,36 +1,20 @@
 'use client';
 
-import { useState } from 'react';
-import { useTheme } from 'next-themes';
-import { Moon, Sun, Type } from 'lucide-react';
+import { Moon, Sun, Monitor, Type, LogOut } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { useThemeFont } from '@/hooks/use-theme-font';
+import { useAuth } from '@/hooks/use-auth';
 import Image from 'next/image';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-} from '@/components/ui/dropdown-menu';
 
 export function UserMenu() {
-  const { theme, setTheme } = useTheme();
-  const [fontFamily, setFontFamily] = useState('system');
-
-  const handleFontChange = (font: string) => {
-    setFontFamily(font);
-    document.documentElement.style.fontFamily = font === 'poppins' ? 'Poppins, sans-serif' : '';
-  };
+  const { theme, setTheme, font, setFont } = useThemeFont();
+  const { logout, user } = useAuth();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <button className="rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+        <Button variant="ghost" size="sm" className="p-1">
           <Image
             src="/images/image-avatar.webp"
             alt="Profile Avatar"
@@ -38,50 +22,39 @@ export function UserMenu() {
             height={32}
             className="rounded-full"
           />
-        </button>
+        </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>Settings</DropdownMenuLabel>
+      <DropdownMenuContent align="end" className="w-48">
+        <DropdownMenuItem onClick={() => setTheme('light')} className="flex items-center gap-2">
+          <Sun className="h-4 w-4" />
+          Light Mode
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('dark')} className="flex items-center gap-2">
+          <Moon className="h-4 w-4" />
+          Dark Mode
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme('system')} className="flex items-center gap-2">
+          <Monitor className="h-4 w-4" />
+          System
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
-        
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <Sun className="mr-2 h-4 w-4" />
-            Theme
-          </DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-              <DropdownMenuRadioItem value="light">
-                <Sun className="mr-2 h-4 w-4" />
-                Light
-              </DropdownMenuRadioItem>
-              <DropdownMenuRadioItem value="dark">
-                <Moon className="mr-2 h-4 w-4" />
-                Dark
-              </DropdownMenuRadioItem>
-              <DropdownMenuRadioItem value="system">
-                System
-              </DropdownMenuRadioItem>
-            </DropdownMenuRadioGroup>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <Type className="mr-2 h-4 w-4" />
-            Font
-          </DropdownMenuSubTrigger>
-          <DropdownMenuSubContent>
-            <DropdownMenuRadioGroup value={fontFamily} onValueChange={handleFontChange}>
-              <DropdownMenuRadioItem value="system">
-                System Default
-              </DropdownMenuRadioItem>
-              <DropdownMenuRadioItem value="poppins">
-                Poppins
-              </DropdownMenuRadioItem>
-            </DropdownMenuRadioGroup>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
+        <DropdownMenuItem onClick={() => setFont('geist')} className="flex items-center gap-2">
+          <Type className="h-4 w-4" />
+          Geist Font
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setFont('inter')} className="flex items-center gap-2">
+          <Type className="h-4 w-4" />
+          Inter Font
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setFont('roboto')} className="flex items-center gap-2">
+          <Type className="h-4 w-4" />
+          Roboto Font
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={logout} className="flex items-center gap-2">
+          <LogOut className="h-4 w-4" />
+          Logout
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

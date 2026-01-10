@@ -1,6 +1,8 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { ThemeFontProvider } from "@/hooks/use-theme-font";
+import { AuthProvider } from "@/hooks/use-auth";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +12,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
       enableSystem
       disableTransitionOnChange
     >
-      {children}
+      <ThemeFontProvider>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </ThemeFontProvider>
     </ThemeProvider>
   );
 }
